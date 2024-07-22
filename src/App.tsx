@@ -8,30 +8,28 @@ import Favourites from "./Pages/Favourite";
 import ProtectRoutes from "./ProtectRoutes";
 import NewsListing from "./Pages/Newslisting";
 import Login from "./Pages/Login";
-import ResponsiveAppBar from "./components/Appbar";
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ResponsiveAppBar />,
+    element: <ProtectRoutes />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
-        element: <ProtectRoutes />,
         errorElement: <ErrorPage />,
         children: [
           {
-            path: "/",
+            index: true,
             element: <NewsListing />,
           },
           {
-            path: "/fav",
+            path: "fav",
             element: <Favourites />,
           },
           {
-            path: "/all",
+            path: "all",
             element: <NewsListing />,
           },
         ],
