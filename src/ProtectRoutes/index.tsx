@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-
+import ResponsiveAppBar from "./components/Appbar";
 
 const ProtectRoutes = () => {
  
@@ -7,7 +7,7 @@ const ProtectRoutes = () => {
     let token = userData ? JSON.parse(userData ) : ""
     
   return (
-    token ? <Outlet/> : <Navigate to="/login" replace/>
+    token ? <ResponsiveAppBar/> : <Navigate to="/login" replace/>
   )
 }
 
